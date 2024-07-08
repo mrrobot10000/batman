@@ -11,11 +11,6 @@ regressor = LinearRegression regressor.fit(x_train,y_train)
  y_pred=regressor.predict (x_test)
 y_pred
 y_test
- plt.scatter (x_train, y_train, color='red')
-plt. plot (x_train, regressor. predict(x_train), color="blue")
-plt. title ("Salary vs experience")
-plt. xlabel ("year of experience") plt.ylabel("salary")
-plt.show()
 plt.scatter (x_test, y_test, color='red')
 plt. plot (x_train, regressor. predict(x_train), color="blue")
 plt. title ("Salary vs experience")
