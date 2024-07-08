@@ -1,9 +1,7 @@
 import pandas as pd 
 from pgmpy.models import BayesianModel 
 from pgmpy.estimators import MaximumLikelihoodEstimator 
-2.Load the dataset: 
 data = pd.read_csv("heart.csv")  # Replace with the actual path to your data 
-3. Define the Bayesian Network Structure: 
 model = BayesianModel([ 
     ('age', 'cholestrol'), 
     ('age', 'lifestyle'), 
@@ -12,12 +10,8 @@ model = BayesianModel([
     ('cholestrol', 'heartdisease'), 
     ('lifestyle', 'heartdisease') 
 ]) 
-4. Fit the Model with Data: 
 estimator = MaximumLikelihoodEstimator() 
-estimator.fit(model, data) 
-5. Inference and Diagnosis: 
-#Example: Diagnose a patient with age=30, gender=Male, family=No, cholestrol=High, and 
-lifestyle=Sedentary. 
+estimator.fit(model, data)   
 query = {'heartdisease': True} 
 evidence = {'age': 30, 'gender': 'Male', 'family': 'No', 'cholestrol': 'High', 'lifestyle': 'Sedentary'} 
 inference = VariableElimination(model) 
